@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamBoard - Collaboration Équipe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- En-tête -->
+        <header class="header">
+            <h1>🤝 TeamBoard</h1>
+            <p>Plateforme collaborative évolutive</p>
+            <div class="header-actions">
+                <button id="themeToggle" class="btn-secondary">🌙 Mode sombre</button>
+            </div>
+        </header>
+
+        <!-- Statistiques -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <div class="stat-value" id="memberCount">0</div>
+                <div class="stat-label">Membres</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="taskCount">0</div>
+                <div class="stat-label">Tâches</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completedCount">0</div>
+                <div class="stat-label">Terminées</div>
+            </div>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="main-grid">
+            <!-- Section Membres -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>👥 Membres de l'équipe</h2>
+                    <button id="addMemberBtn" class="btn-primary">+ Ajouter</button>
+                </div>
+                <div id="membersList" class="members-list"></div>
+            </section>
+
+            <!-- Section Tâches -->
+            <section class="card">
+                <div class="card-header">
+                    <h2>✅ Tâches en cours</h2>
+                    <button id="addTaskBtn" class="btn-primary">+ Nouvelle tâche</button>
+                </div>
+                <div id="tasksList" class="tasks-list"></div>
+            </section>
+
+            <!-- Section Commentaires collaboratifs -->
+            <section class="card comment-card">
+                <div class="card-header">
+                    <h2>💬 Commentaires d'équipe</h2>
+                </div>
+                <div id="commentsList" class="comments-list"></div>
+                <div class="comment-input-group">
+                    <input type="text" id="commentInput" placeholder="Partagez une idée, un feedback...">
+                    <button id="addCommentBtn" class="btn-primary">Publier</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Modale pour ajouter membre -->
+        <div id="memberModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Ajouter un membre</h3>
+                <input type="text" id="memberName" placeholder="Nom du membre">
+                <input type="text" id="memberRole" placeholder="Rôle (ex: Développeur)">
+                <button id="saveMemberBtn" class="btn-primary">Ajouter</button>
+            </div>
+        </div>
+
+        <!-- Modale pour ajouter tâche -->
+        <div id="taskModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Ajouter une tâche</h3>
+                <input type="text" id="taskTitle" placeholder="Titre de la tâche">
+                <select id="taskAssignee">
+                    <option value="">Assigner à...</option>
+                </select>
+                <button id="saveTaskBtn" class="btn-primary">Ajouter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
